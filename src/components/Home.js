@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Item from './Item';
 import '../assets/css/home.css';
 import logo from '../assets/images/logo.png';
 
@@ -34,6 +35,10 @@ const Home = ({ tabState, onChangeTab }) => {
             </div>
 
             <div className="tab-contents-container">
+                {tabState.tab === 'item' ?
+                    <Item />
+                    : ''
+                }
             </div>
 
         </div>
