@@ -24,8 +24,22 @@
     margin-left: 0%;
 }
 
+.item-contents:hover {
+    background: #f0f0f0;
+}
+
 .item-contents-image-area {
     width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.item-contents-image-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     overflow: hidden;
 }
 
@@ -46,6 +60,9 @@
     font-size: 13px;
     line-height: 20px;
     color: #4b4b4b;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 
 .item-contents-title {

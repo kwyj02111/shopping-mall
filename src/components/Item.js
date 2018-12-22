@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { isMobile } from 'react-device-detect';
 import ITEM_JSON from '../assets/data/item.json';
 import '../assets/css/item.css';
 
@@ -9,6 +10,7 @@ class Item extends Component {
 
         this.state = {
             itemList : [],
+            isMobile : isMobile,
         }
     }
 
@@ -39,13 +41,17 @@ class Item extends Component {
 
         return (
             <div className="item-container">
+
                 <ul className="item-list-container">
                     {this.state.itemList.map((item, idx) =>
                         <li key={idx}
                             className={idx%3 === 0 ? "item-contents first" : "item-contents"}
+                            onClick={() => this.state.isMobile ? window.open(item.mobileUrl) : window.open(item.url)}
                         >
                             <div className="item-contents-image-area">
-                                <img src={item.image.url} className="item-contents-image" alt="" />
+                                <div className="item-contents-image-wrap">
+                                    <img src={item.image.url} className="item-contents-image" alt="" />
+                                </div>
                             </div>
 
                             <div className="item-contents-info-area">
@@ -62,7 +68,6 @@ class Item extends Component {
                                 </div>
                             </div>
                         </li>
-
                     )}
                 </ul>
             </div>
