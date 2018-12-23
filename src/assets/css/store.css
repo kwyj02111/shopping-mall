@@ -1,0 +1,72 @@
+.store-container {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+}
+
+.store-list-container {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.store-contents {
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+    cursor: pointer;
+    padding: 0 10px 10px 10px;
+    display: inline-block;
+}
+
+.store-ranking-container {
+    width: 30px;
+    height: 100%;
+    float: left;
+}
+
+.store-ranking {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(74, 218, 175, 0.7);
+    box-shadow: 0 5px 15px 0.4px rgba(0,0,0,.2);
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+}
+
+.store-contents-image {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.store-contents-info-area {
+    float: right;
+    width: calc(100% - 135px);
+    height: 100%;
+}
+
+.store-contents-name {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: #4b4b4b;
+}
+
+.store-contents-description {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.4;
+    color: #5e5e5e;
+}

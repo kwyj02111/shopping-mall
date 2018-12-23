@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import Store from './Store';
 import '../assets/css/home.css';
 import logo from '../assets/images/logo.png';
 
@@ -37,6 +38,8 @@ const Home = ({ tabState, onChangeTab }) => {
             <div className="tab-contents-container">
                 {tabState.tab === 'item' ?
                     <Item />
+                    : tabState.tab === 'store' ?
+                    <Store />
                     : ''
                 }
             </div>
