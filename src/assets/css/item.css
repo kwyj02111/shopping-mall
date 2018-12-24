@@ -56,6 +56,10 @@
     background: #f0f0f0;
 }
 
+.item-contents:hover .item-contents-image {
+    transform: scale(1.1);
+}
+
 .item-contents-image-area {
     width: 100%;
     padding-top: 100%;
@@ -74,6 +78,7 @@
 .item-contents-image {
     width: 100%;
     height: auto;
+    transition: 0.35s;
 }
 
 .item-contents-info-area {
