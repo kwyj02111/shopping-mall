@@ -6,7 +6,7 @@
 
 .header-container {
     width: 100%;
-    height: 90px;
+    height: 100px;
     box-shadow: 0 0 5px 1px rgba(0,0,0,.15);
     position: fixed;
     top: 0;
@@ -16,7 +16,7 @@
 
 .logo-container {
     width: 100%;
-    height: 50px;
+    height: 60px;
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #f1f1f1;
@@ -24,7 +24,7 @@
 
 .header-logo {
     width: auto;
-    height: 30px;
+    height: 40px;
 }
 
 .tab-container {
@@ -60,5 +60,5 @@
 .tab-contents-container {
     width: 100%;
     height: auto;
-    padding-top: 90px;
+    padding-top: 100px;
 }

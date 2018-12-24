@@ -1,7 +1,7 @@
 .store-container {
     width: 100%;
     height: auto;
-    padding: 25px;
+    padding: 30px 4%;
 }
 
 .store-list-container {
@@ -13,11 +13,14 @@
 .store-contents {
     width: 100%;
     min-height: 90px;
-    margin-bottom: 30px;
     border-bottom: 1px solid #d8d8d8;
     cursor: pointer;
-    padding: 0 10px 10px 10px;
-    display: inline-block;
+    padding: 20px 10px 20px 10px;
+    float: left;
+}
+
+.store-contents:hover {
+    background: #f0f0f0;
 }
 
 .store-ranking-container {
@@ -60,6 +63,8 @@
     line-height: 1.2;
     margin-bottom: 5px;
     color: #4b4b4b;
+    word-break: break-all;
+    white-space: normal;
 }
 
 .store-contents-description {
@@ -69,4 +74,6 @@
     text-align: left;
     line-height: 1.4;
     color: #5e5e5e;
+    word-break: break-all;
+    white-space: normal;
 }

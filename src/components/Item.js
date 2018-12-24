@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { isMobile } from 'react-device-detect';
+import { sortBy } from 'underscore';
 import ITEM_JSON from '../assets/data/item.json';
 import '../assets/css/item.css';
 
@@ -10,7 +11,8 @@ class Item extends Component {
 
         this.state = {
             itemList : [],
-            isMobile : isMobile,
+            isMobile : isMobile, //mobile check (mobile일 경우 true, 아닐경우 false)
+            sort : 'popular',
         }
     }
 
@@ -20,10 +22,39 @@ class Item extends Component {
         });
     }
 
+    // 아이템 sort (인기순, 가격높은순, 가격낮은순)
+    sortItemList(type){
+        if(typeof type === 'undefined'){
+            return;
+        }
+
+        if(type !== 'asc' && type !== 'desc' && type !== 'popular'){
+            return;
+        }
+
+        let list = this.state.itemList;
+        let newList = list;
+
+        if(type === 'asc'){
+            newList = sortBy(list, 'price');
+        }else if(type === 'desc'){
+            newList = sortBy(list, 'price').reverse();
+        }else{
+            newList = ITEM_JSON.data;
+        }
+
+        this.setState({
+            sort: type,
+            itemList : newList
+        });
+
+        return;
+    }
+
     //3자리 마다 콤마 찍어 주기
     numberWithCommas(num){
 
-        if(typeof num === undefined || num === null || num === '' || num === '.'){
+        if(typeof num === 'undefined' || num === null || num === '' || num === '.'){
             return '';
         }
 
@@ -41,6 +72,29 @@ class Item extends Component {
 
         return (
             <div className="item-container">
+
+                <div className="item-sort-container">
+                    <button
+                        className={this.state.sort === 'asc' ? "item-sort-btn active" : "item-sort-btn"}
+                        onClick={() => this.sortItemList('asc')}
+                    >
+                        가격낮은순
+                    </button>
+
+                    <button
+                        className={this.state.sort === 'desc' ? "item-sort-btn active" : "item-sort-btn"}
+                        onClick={() => this.sortItemList('desc')}
+                    >
+                        가격높은순
+                    </button>
+
+                    <button
+                        className={this.state.sort === 'popular' ? "item-sort-btn active" : "item-sort-btn"}
+                        onClick={() => this.sortItemList('popular')}
+                    >
+                        인기순
+                    </button>
+                </div>
 
                 <ul className="item-list-container">
                     {this.state.itemList.map((item, idx) =>

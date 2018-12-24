@@ -1,21 +1,49 @@
 .item-container {
     width: 100%;
     height: auto;
-    padding: 25px;
+    padding: 30px 4%;
+}
+
+.item-sort-container {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.item-sort-btn {
+    float: right;
+    padding: 0 10px;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+    color: #4b4b4b;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.item-sort-btn:first-child {
+    margin-right: 0px;
+}
+
+.item-sort-btn.active {
+    color: #fff;
+    background: #4adaaf;
+    font-weight: bold;
 }
 
 .item-list-container {
     width: 100%;
     height: auto;
-    display: inline-block;
+    text-align: left;
 }
 
 .item-contents {
     width: 32%;
     height: auto;
-    float: left;
+    display: inline-block;
     margin-left: 2%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #d8d8d8;
     cursor: pointer;
 }
@@ -63,6 +91,7 @@
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
+    text-align: left;
 }
 
 .item-contents-title {
@@ -76,6 +105,7 @@
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
+    text-align: left;
 }
 
 .item-contents-price {
@@ -85,4 +115,5 @@
     font-weight: bold;
     line-height: 20px;
     color: #4adaaf;
+    text-align: left;
 }
