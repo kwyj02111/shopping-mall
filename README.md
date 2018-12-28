@@ -20,22 +20,22 @@
 ```
 npm install
 ```
-프로젝트를 setup 하기 위한 명령어입니다.
+프로젝트를 setup 하기 위한 명령어입니다.<br>
 프로젝트에 사용된 모듈을 해당 명령어로 install 해주세요.
 
 ### - Runs the app in the development mode
 ```
 npm start
 ```
-개발 모드로 실행시키는 명령어입니다.
-이 명령어를 사용하여 프로젝트를 실행 시켜주세요.
+개발 모드로 실행시키는 명령어입니다.<br>
+이 명령어를 사용하여 프로젝트를 실행 시켜주세요.<br>
 실행화면은 [http://localhost:3000](http://localhost:3000) 에서 확인하실 수 있습니다.
 
 ### - Builds the app for production
 ```
 npm run build
 ```
-배포를 위해 앱을 빌드하기 위한 명령어입니다.
+배포를 위해 앱을 빌드하기 위한 명령어입니다.<br>
 이 명령어를 사용하면 `build` 폴더에 빌드합니다.
 
 
@@ -50,7 +50,7 @@ import 'react-app-polyfill/ie9';
 ```
 
 ### - 모바일 기기 체크
-상품 탭에서 상품 클릭시 랜딩 url로 이동할 때, 기기에 따른 url 이동을 위해 모바일 기기인지 체크.
+상품 탭에서 상품 클릭시 랜딩 url로 이동할 때, 기기에 따른 url 이동을 위해 모바일 기기인지 체크.<br>
 `react-device-detect` 모듈 사용.
 
 ```js
@@ -70,8 +70,8 @@ import { isMobile } from 'react-device-detect';
 ```
 
 ### - 상품탭 Sort 기능
-상품 탭에 sort 기능을 추가하여 `인기순` / `가격 높은순` / `가격 낮은순` 으로 Sort 가능.
-상품 탭 진입시 sort default 값은 인기순으로 설정함.
+상품 탭에 sort 기능을 추가하여 `인기순` / `가격 높은순` / `가격 낮은순` 으로 Sort 가능.<br>
+상품 탭 진입시 sort default 값은 인기순으로 설정함.<br>
 [underscore.js](https://underscorejs.org/) 사용.
 
 ```js
