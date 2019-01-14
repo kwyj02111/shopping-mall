@@ -103,8 +103,6 @@ class Item extends Component {
                 keyword : '',
             });
 
-            console.log(this.state);
-
         } catch(e) {
 
             this.setState({
