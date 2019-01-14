@@ -122,3 +122,21 @@
     color: #4adaaf;
     text-align: left;
 }
+
+
+
+
+
+.list-search-container {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    margin-bottom: 30px;
+}
+
+.list-search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}

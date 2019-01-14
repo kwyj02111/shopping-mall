@@ -3,6 +3,7 @@ import { isMobile } from 'react-device-detect';
 import { sortBy } from 'underscore';
 import ITEM_JSON from '../assets/data/item.json';
 import '../assets/css/item.css';
+import * as axiosService from '../services/axios';
 
 class Item extends Component {
 
@@ -13,13 +14,11 @@ class Item extends Component {
             itemList : [],
             isMobile : isMobile, //mobile check (mobile일 경우 true, 아닐경우 false)
             sort : 'popular',
+            keyword : '',
         }
     }
 
     componentDidMount() {
-        this.setState({
-            itemList: ITEM_JSON.data,
-        });
     }
 
     // 아이템 sort (인기순, 가격높은순, 가격낮은순)
@@ -68,32 +67,66 @@ class Item extends Component {
         return result;
     }
 
+    addSearchInputKeyPress = (event) => {
+
+        if (event.keyCode === 13 || event.charCode === 13) {
+            this.getSearchData();
+        }
+
+        return;
+    }
+
+    updateSearchValue(event) {
+        this.setState({
+            keyword: event.target.value
+        });
+
+        return;
+    }
+
+    getSearchData = async () => {
+
+        if(this.state.keyword === ''){
+            return;
+        }
+
+        try {
+            let url = `https://dev-soho-api.stylesha.re/kr/products/search`;
+            let params = {
+                keyword : this.state.keyword,
+            }
+
+            const itemList = await axiosService.getData(url, params);
+
+            this.setState({
+                itemList: itemList.data.data,
+                keyword : '',
+            });
+
+            console.log(this.state);
+
+        } catch(e) {
+
+            this.setState({
+                keyword: ''
+            });
+            console.log(e);
+        }
+    }
+
     render() {
 
         return (
             <div className="item-container">
-
-                <div className="item-sort-container">
-                    <button
-                        className={this.state.sort === 'asc' ? "item-sort-btn active" : "item-sort-btn"}
-                        onClick={() => this.sortItemList('asc')}
-                    >
-                        가격낮은순
-                    </button>
-
-                    <button
-                        className={this.state.sort === 'desc' ? "item-sort-btn active" : "item-sort-btn"}
-                        onClick={() => this.sortItemList('desc')}
-                    >
-                        가격높은순
-                    </button>
-
-                    <button
-                        className={this.state.sort === 'popular' ? "item-sort-btn active" : "item-sort-btn"}
-                        onClick={() => this.sortItemList('popular')}
-                    >
-                        인기순
-                    </button>
+                <div className="list-search-container">
+                    <input
+                        className="list-search-input"
+                        type="text"
+                        value={this.state.keyword}
+                        onKeyPress={this.addSearchInputKeyPress}
+                        onChange={event => this.updateSearchValue(event)}
+                        autoFocus
+                    />
                 </div>
 
                 <ul className="item-list-container">
